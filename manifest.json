@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ShortsEnhancer",
+  "version": "0.1",
+  "description": "Enhances the YouTube shorts experience by adding functionality to pause and open the full YouTube video at the same timestamp.",
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content_scripts/youtubeShortsHandler.js", "content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["iframe_api.js"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ]
+}

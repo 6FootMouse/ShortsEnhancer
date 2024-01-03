@@ -1,0 +1,12 @@
+body {
+  width: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+button {
+  margin-top: 10px;
+}
